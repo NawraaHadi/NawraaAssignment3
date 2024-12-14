@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UOB Students Nationality Data</title>
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.6/css/pico.min.css">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- simple style to not let text wrapping in the table -->
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.6/css/pico.min.css">
+     <style>
+        table th, table td {
+          white-space: nowrap;
+        }
+      </style>
 </head>
 <body>
     <main class="container">
         <div class="overflow-auto">
+<!-- section containing the data table that display student nationality data -->
             <section>
                 <h1>UOB Students Nationality Data</h1>
                 <table>
@@ -18,26 +24,20 @@
                         <tr>
                             <th>Year</th>
                             <th>Semester</th>
-                            <th>Programs</th>
+                            <th>The Programs</th>
                             <th>Nationality</th>
                             <th>Colleges</th>
                             <th>Number of Students</th>
                         </tr>
                     </thead>
-                    <tbody id="table-body">
+                    <tbody>
+                        <!-- javaScript will show rows here -->
                     </tbody>
                 </table>
         </div>
         </section>
     </main>
-    <!-- adding dynamic functionality by <script> -->
-    <script src="api.js"></script>
+        <!-- adding dynamic functionality by <script> -->
+        <script src="api.js"></script>
 </body>
-
 </html>
-
-<style>
-    table th, table td {
-      white-space: nowrap;
-    }
-  </style>
