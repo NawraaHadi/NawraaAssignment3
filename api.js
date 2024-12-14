@@ -5,10 +5,12 @@ async function fetchUOBdata() {
   // fetch data from the API
   try {
     const response = await fetch(url);
-    if (!response.ok || response.status !== 200) {
+    if (!response.ok) {
       console.error("Failed to fetch data");
+      return;
     }
 
+    // parse the JSON response into a JavaScript object
     const data = await response.json();
 
     //call the function
@@ -17,13 +19,8 @@ async function fetchUOBdata() {
     console.error("Error fetching data:", error);
   }
 }
-/**
- * Display records in the table
- * @param {Array} results - Fetched data
- */
 function displayUOBdata(results) {
-  //   const tableBody = decument.getElementById("table-body");
-  const tableBody = document.querySelector("#data-table tbody");
+  const tableBody = decument.getElementById("table-body");
   //add each result as a table row
   results.forEach((result) => {
     const tableRow = decument.createElement("tr");
@@ -41,4 +38,5 @@ function displayUOBdata(results) {
   });
 }
 
+//wait for the DOM to fully load before executing the fetchUOBdata function
 decument.addEventListener("DOMContentLoaded", fetchUOBdata);
