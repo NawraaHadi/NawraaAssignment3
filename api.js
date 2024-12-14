@@ -17,9 +17,13 @@ async function fetchUOBdata() {
     console.error("Error fetching data:", error);
   }
 }
+/**
+ * Display records in the table
+ * @param {Array} results - Fetched data
+ */
 function displayUOBdata(results) {
-  const tableBody = decument.getElementById("table-body");
-
+  //   const tableBody = decument.getElementById("table-body");
+  const tableBody = document.querySelector("#data-table tbody");
   //add each result as a table row
   results.forEach((result) => {
     const tableRow = decument.createElement("tr");
